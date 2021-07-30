@@ -1,5 +1,28 @@
+// COLORS
+$blue-color: #00A1BA;
+$black-color: #324A51;
+$gray-color: #95B0B7;
+
+// FONT
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PT Serif', serif !important;
+}
+
+html {
+  min-height: 100vh;
+  background-color: $gray-color;
+}
+
 body {
   margin: 0;
+  padding: 1em;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
