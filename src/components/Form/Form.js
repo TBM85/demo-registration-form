@@ -8,14 +8,10 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={classes.Form}>
       <div className={classes.FormControl}>
-        <label htmlFor="firstname">First Name</label>
-        <input id="fistname" type="text" />
-      </div>
-      <div className={classes.FormControl}>
-        <label htmlFor="lastname">Last Name</label>
-        <input id="lastname" type="text" />
+        <label htmlFor="username">Username</label>
+        <input id="username" type="text" />
       </div>
       <div className={classes.FormControl}>
         <label htmlFor="email">Email</label>
