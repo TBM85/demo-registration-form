@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import useForm from "hooks/useForm";
 
 import classes from "./Form.module.scss";
+import Button from "components/UI/Button/Button";
 
 const Form = (props) => {
   const { isSubmitted, values, changeValueHandler, submitHandler } = useForm();
@@ -52,7 +53,7 @@ const Form = (props) => {
           onChange={changeValueHandler}
         />
       </div>
-      <button type="submit">Sign Up</button>
+      <Button type="submit">Sign Up</Button>
     </form>
   );
 };
