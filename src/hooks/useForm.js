@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const useForm = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -19,9 +20,11 @@ const useForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+
+    setIsSubmitted(true);
   };
 
-  return { values, changeValueHandler, submitHandler };
+  return { isSubmitted, values, changeValueHandler, submitHandler };
 }
 
 export default useForm;

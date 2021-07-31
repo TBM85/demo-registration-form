@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useForm from "hooks/useForm";
 
 import classes from "./Form.module.scss";
 
-const Form = () => {
-  const { values, changeValueHandler, submitHandler } = useForm();
+const Form = (props) => {
+  const { isSubmitted, values, changeValueHandler, submitHandler } = useForm();
+
+  useEffect(() => {
+    props.onPassToApp(isSubmitted);
+  })
 
   return (
     <form onSubmit={submitHandler} className={classes.Form}>
