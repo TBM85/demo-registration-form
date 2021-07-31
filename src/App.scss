@@ -1,3 +1,9 @@
+@import "./index";
+
 .App {
   text-align: center;
+
+  h1 {
+    color: $third-color;
+  }
 }
