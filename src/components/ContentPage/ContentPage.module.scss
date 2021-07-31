@@ -1,5 +1,17 @@
 @import "../../index";
 
+@media (max-width: 575px) {
+  .LogoutBtn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .LogoutBtn {
+    width: 10em;
+  }
+}
+
 .ContentPage {
   margin: 1em auto;
   color: $third-color;
