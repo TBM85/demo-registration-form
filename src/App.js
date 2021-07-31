@@ -6,6 +6,8 @@ import ContentPage from "components/ContentPage/ContentPage";
 
 function App() {
   const [submitted, setSubmitted] = useState();
+
+  // Update the state to determine which component is displayed
   const submittedHandler = (isSubmitted) => {
     setSubmitted(isSubmitted);
   };
@@ -18,7 +20,7 @@ function App() {
       {!submitted ? (
         <Form onPassToApp={submittedHandler} />
       ) : (
-        <ContentPage />
+        <ContentPage submitted={submitted} onPassToApp={submittedHandler} />
       )}
     </div>
   );

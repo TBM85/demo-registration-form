@@ -8,6 +8,7 @@ const Form = (props) => {
   const { isSubmitted, values, changeValueHandler, submitHandler } = useForm();
 
   useEffect(() => {
+    // Pass the "isSubmitted" variable to parent component "App"
     props.onPassToApp(isSubmitted);
   })
 

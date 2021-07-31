@@ -9,6 +9,7 @@ const useForm = () => {
     password2: ""
   });
 
+  // Change the values of the input fields of the form
   const changeValueHandler = (event) => {
     const { name, value } = event.target;
 
@@ -18,6 +19,7 @@ const useForm = () => {
     })
   }
 
+  // Submit the values of the form input fields and open the content page
   const submitHandler = (event) => {
     event.preventDefault();
 
