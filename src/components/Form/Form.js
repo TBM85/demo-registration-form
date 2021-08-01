@@ -10,7 +10,7 @@ const Form = (props) => {
   useEffect(() => {
     // Pass the "isSubmitted" variable to parent component "App"
     props.onPassToApp(isSubmitted);
-  })
+  });
 
   return (
     <form onSubmit={submitHandler} className={classes.Form}>

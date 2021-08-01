@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 import classes from "./ContentPage.module.scss";
 import Button from "components/UI/Button/Button";
@@ -10,12 +11,12 @@ const ContentPage = (props) => {
   // Close the content page and the registration form appears
   const logoutHandler = () => {
     setIsSubmitted(!submitted);
-  }
+  };
 
   useEffect(() => {
     // Pass the "isSubmitted" variable to parent component "App"
     props.onPassToApp(isSubmitted);
-  })
+  });
 
   return (
     <div className={classes.ContentPage}>
@@ -32,3 +33,8 @@ const ContentPage = (props) => {
 };
 
 export default ContentPage;
+
+ContentPage.propTypes = {
+  isSubmitted: PropTypes.bool,
+  logoutHandler: PropTypes.func,
+};

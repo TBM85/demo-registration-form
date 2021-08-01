@@ -1,11 +1,12 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 import "./App.scss";
 import Form from "components/Form/Form";
 import ContentPage from "components/ContentPage/ContentPage";
 
 function App() {
-  const [submitted, setSubmitted] = useState();
+  const [submitted, setSubmitted] = useState(Boolean);
 
   // Update the state to determine which component is displayed
   const submittedHandler = (isSubmitted) => {
@@ -27,3 +28,8 @@ function App() {
 }
 
 export default App;
+
+App.propTypes = {
+  submitted: PropTypes.bool,
+  submittedHandler: PropTypes.func,
+};
