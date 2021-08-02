@@ -9,12 +9,14 @@ const Form = (props) => {
     isSubmitted,
     values,
     isValid,
+    isTouched,
     invalidUsername,
     invalidEmail,
     invalidPassword1,
     invalidPassword2,
     changeValueHandler,
     submitHandler,
+    inputBlurHandler
   } = useForm();
 
   useEffect(() => {
@@ -35,8 +37,9 @@ const Form = (props) => {
           onChange={changeValueHandler}
           autoComplete="off"
           maxLength={25}
+          onBlur={inputBlurHandler}
         />
-        {invalidUsername && (
+        {(isTouched.username && invalidUsername) && (
           <small>You must enter your username</small>
         )}
       </div>
@@ -50,8 +53,9 @@ const Form = (props) => {
           value={values.email}
           onChange={changeValueHandler}
           autoComplete="off"
+          onBlur={inputBlurHandler}
         />
-        {invalidEmail && (
+        {(isTouched.email && invalidEmail) && (
           <small>You must enter your email</small>
         )}
       </div>
@@ -65,8 +69,9 @@ const Form = (props) => {
           value={values.password1}
           onChange={changeValueHandler}
           autoComplete="off"
+          onBlur={inputBlurHandler}
         />
-        {invalidPassword1 && (
+        {(isTouched.password1 && invalidPassword1) && (
           <small>You must enter a password</small>
         )}
       </div>
@@ -80,8 +85,9 @@ const Form = (props) => {
           value={values.password2}
           onChange={changeValueHandler}
           autoComplete="off"
+          onBlur={inputBlurHandler}
         />
-        {invalidPassword2 && (
+        {(isTouched.password2 && invalidPassword2) && (
           <small>You must confirm the password</small>
         )}
       </div>

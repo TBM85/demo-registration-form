@@ -26,6 +26,23 @@ const useForm = () => {
   const invalidPassword1 = values.password1.trim() === "";
   const invalidPassword2 = values.password2.trim() === "";
 
+
+  const [isTouched, setIsTouched] = useState({
+    username: false,
+    email: false,
+    password1: false,
+    password2: false
+  });
+
+  const inputBlurHandler = (event) => {
+    const { name } = event.target;
+
+    setIsTouched({
+      ...isTouched,
+      [name]: true
+    })
+  };
+
   // Submit the values of the form input fields and open the content page
   const submitHandler = (event) => {
     event.preventDefault();
@@ -54,12 +71,14 @@ const useForm = () => {
     isSubmitted,
     values,
     isValid,
+    isTouched,
     invalidUsername,
     invalidEmail,
     invalidPassword1,
     invalidPassword2,
     changeValueHandler,
     submitHandler,
+    inputBlurHandler
   };
 };
 
