@@ -1,0 +1,22 @@
+@import "../../../index";
+
+img {
+  padding: 0.25em;
+  margin-top: -2.2em;
+  float: right;
+  visibility: hidden;
+}
+
+small {
+  visibility: hidden;
+  float: right;
+  color: $white-color;
+}
+
+.success {
+  visibility: visible;
+}
+
+.error {
+  visibility: visible;
+}

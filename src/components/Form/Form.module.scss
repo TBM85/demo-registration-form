@@ -1,12 +1,23 @@
 @import "../../index";
 
+@media (max-width: 575px) {
+  .Form {
+    min-width: 90vw;
+  }
+}
+
+@media (min-width: 576px) {
+  .Form {
+    width: 24em;
+  }
+}
+
 .Form {
   background-color: $third-color;
   border-radius: 0.5em;
   text-align: left;
   padding: 1.2em;
   margin: 1em auto;
-  max-width: 24em;
 
   .FormControl {
     display: flex;
