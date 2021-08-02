@@ -5,7 +5,17 @@ import classes from "./Form.module.scss";
 import Button from "components/UI/Button/Button";
 
 const Form = (props) => {
-  const { isSubmitted, values, isValid, changeValueHandler, submitHandler } = useForm();
+  const {
+    isSubmitted,
+    values,
+    isValid,
+    invalidUsername,
+    invalidEmail,
+    invalidPassword1,
+    invalidPassword2,
+    changeValueHandler,
+    submitHandler,
+  } = useForm();
 
   useEffect(() => {
     // Pass the "isSubmitted" variable to parent component "App"
@@ -26,6 +36,9 @@ const Form = (props) => {
           autoComplete="off"
           maxLength={25}
         />
+        {invalidUsername && (
+          <small>You must enter your username</small>
+        )}
       </div>
       <div className={classes.FormControl}>
         <label htmlFor="email">Email</label>
@@ -38,6 +51,9 @@ const Form = (props) => {
           onChange={changeValueHandler}
           autoComplete="off"
         />
+        {invalidEmail && (
+          <small>You must enter your email</small>
+        )}
       </div>
       <div className={classes.FormControl}>
         <label htmlFor="password1">Password</label>
@@ -50,6 +66,9 @@ const Form = (props) => {
           onChange={changeValueHandler}
           autoComplete="off"
         />
+        {invalidPassword1 && (
+          <small>You must enter a password</small>
+        )}
       </div>
       <div className={classes.FormControl}>
         <label htmlFor="password2">Confirm Password</label>
@@ -62,8 +81,13 @@ const Form = (props) => {
           onChange={changeValueHandler}
           autoComplete="off"
         />
+        {invalidPassword2 && (
+          <small>You must confirm the password</small>
+        )}
       </div>
-      <Button type="submit" className={!isValid && "invalid"}>Sign Up</Button>
+      <Button type="submit" className={!isValid && "invalid"}>
+        Sign Up
+      </Button>
     </form>
   );
 };

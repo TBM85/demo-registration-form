@@ -38,14 +38,29 @@ const useForm = () => {
   };
 
   useEffect(() => {
-    if (invalidUsername || invalidEmail || invalidPassword1 || invalidPassword2) {
+    if (
+      invalidUsername ||
+      invalidEmail ||
+      invalidPassword1 ||
+      invalidPassword2
+    ) {
       setIsValid(false);
     } else {
       setIsValid(true);
     }
   }, [invalidEmail, invalidPassword1, invalidPassword2, invalidUsername]);
 
-  return { isSubmitted, values, isValid, changeValueHandler, submitHandler };
+  return {
+    isSubmitted,
+    values,
+    isValid,
+    invalidUsername,
+    invalidEmail,
+    invalidPassword1,
+    invalidPassword2,
+    changeValueHandler,
+    submitHandler,
+  };
 };
 
 export default useForm;
