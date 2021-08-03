@@ -21,17 +21,40 @@ const useForm = () => {
 
   const [isValid, setIsValid] = useState(Boolean);
 
-  const invalidUsername = values.username.trim() === "";
-  const invalidEmail = values.email.trim() === "";
-  const invalidPassword1 = values.password1.trim() === "";
-  const invalidPassword2 = values.password2.trim() === "";
+  const emptyUsername = values.username.trim() === "";
+  const emptyEmail = values.email.trim() === "";
+  const emptyPassword1 = values.password1.trim() === "";
+  const emptyPassword2 = values.password2.trim() === "";
 
+  // Username verification
+  const usernameIsValid = (username) => {
+    return username.length > 6;
+  };
+
+  // Email address verification function from Tyler McGinnis
+  // https://dev.to/tylermcginnis/how-to-validate-an-email-address-in-javascript-f7i
+  const emailIsValid = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  // Password verification
+  // At least 8 digits, including a capital letter and a number
+  const password1IsValid = (password) => {
+    return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password);
+  };
+
+  const invalidUsername = emptyUsername || !usernameIsValid;
+  const invalidEmail = emptyEmail || !emailIsValid(values.email);
+  const invalidPassword1 =
+    emptyPassword1 || !password1IsValid(values.password1);
+  const invalidPassword2 =
+    emptyPassword2 || values.password2 !== values.password1;
 
   const [isTouched, setIsTouched] = useState({
     username: false,
     email: false,
     password1: false,
-    password2: false
+    password2: false,
   });
 
   const inputBlurHandler = (event) => {
@@ -39,8 +62,8 @@ const useForm = () => {
 
     setIsTouched({
       ...isTouched,
-      [name]: true
-    })
+      [name]: true,
+    });
   };
 
   // Submit the values of the form input fields and open the content page
@@ -78,7 +101,7 @@ const useForm = () => {
     invalidPassword2,
     changeValueHandler,
     submitHandler,
-    inputBlurHandler
+    inputBlurHandler,
   };
 };
 
