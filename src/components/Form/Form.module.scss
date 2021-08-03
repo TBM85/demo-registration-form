@@ -48,4 +48,11 @@
   button {
     width: 100%;
   }
+
+  .error {
+    background-image: url("../../assets/icons/error.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+  }
 }

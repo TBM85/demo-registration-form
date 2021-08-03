@@ -16,7 +16,7 @@ const Form = (props) => {
     invalidPassword2,
     changeValueHandler,
     submitHandler,
-    inputBlurHandler
+    inputBlurHandler,
   } = useForm();
 
   useEffect(() => {
@@ -38,8 +38,11 @@ const Form = (props) => {
           autoComplete="off"
           maxLength={25}
           onBlur={inputBlurHandler}
+          className={`${
+            isTouched.username && invalidUsername ? classes["error"] : ""
+          }`}
         />
-        {(isTouched.username && invalidUsername) && (
+        {isTouched.username && invalidUsername && (
           <small>You must enter your username</small>
         )}
       </div>
@@ -54,8 +57,11 @@ const Form = (props) => {
           onChange={changeValueHandler}
           autoComplete="off"
           onBlur={inputBlurHandler}
+          className={`${
+            isTouched.email && invalidEmail ? classes["error"] : ""
+          }`}
         />
-        {(isTouched.email && invalidEmail) && (
+        {isTouched.email && invalidEmail && (
           <small>You must enter your email</small>
         )}
       </div>
@@ -70,8 +76,11 @@ const Form = (props) => {
           onChange={changeValueHandler}
           autoComplete="off"
           onBlur={inputBlurHandler}
+          className={`${
+            isTouched.password1 && invalidPassword1 ? classes["error"] : ""
+          }`}
         />
-        {(isTouched.password1 && invalidPassword1) && (
+        {isTouched.password1 && invalidPassword1 && (
           <small>You must enter a password</small>
         )}
       </div>
@@ -86,8 +95,11 @@ const Form = (props) => {
           onChange={changeValueHandler}
           autoComplete="off"
           onBlur={inputBlurHandler}
+          className={`${
+            isTouched.password2 && invalidPassword2 ? classes["error"] : ""
+          }`}
         />
-        {(isTouched.password2 && invalidPassword2) && (
+        {isTouched.password2 && invalidPassword2 && (
           <small>You must confirm the password</small>
         )}
       </div>
