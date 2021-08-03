@@ -66,6 +66,24 @@ const useForm = () => {
     });
   };
 
+  // Define when the inputs are invalid
+  const isInvalidUsername =
+    (isTouched.username && invalidUsername) ||
+    (isTouched.email && invalidUsername) ||
+    (isTouched.password1 && invalidUsername) ||
+    (isTouched.password2 && invalidUsername);
+
+  const isInvalidEmail =
+    (isTouched.email && invalidEmail) ||
+    (isTouched.password1 && invalidEmail) ||
+    (isTouched.password2 && invalidEmail);
+
+  const isInvalidPassword1 =
+    (isTouched.password1 && invalidPassword1) ||
+    (isTouched.password2 && invalidPassword1);
+
+  const isInvalidPassword2 = isTouched.password2 && invalidPassword2;
+
   // Submit the values of the form input fields and open the content page
   const submitHandler = (event) => {
     event.preventDefault();
@@ -94,11 +112,14 @@ const useForm = () => {
     isSubmitted,
     values,
     isValid,
-    isTouched,
     invalidUsername,
     invalidEmail,
     invalidPassword1,
     invalidPassword2,
+    isInvalidUsername,
+    isInvalidEmail,
+    isInvalidPassword1,
+    isInvalidPassword2,
     changeValueHandler,
     submitHandler,
     inputBlurHandler,

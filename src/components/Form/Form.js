@@ -9,11 +9,14 @@ const Form = (props) => {
     isSubmitted,
     values,
     isValid,
-    isTouched,
     invalidUsername,
     invalidEmail,
     invalidPassword1,
     invalidPassword2,
+    isInvalidUsername,
+    isInvalidEmail,
+    isInvalidPassword1,
+    isInvalidPassword2,
     changeValueHandler,
     submitHandler,
     inputBlurHandler,
@@ -39,10 +42,10 @@ const Form = (props) => {
           maxLength={25}
           onBlur={inputBlurHandler}
           className={`${
-            isTouched.username && invalidUsername ? classes["error"] : !invalidUsername ? classes["verified"] : ""
+            isInvalidUsername ? classes["error"] : !invalidUsername ? classes["verified"] : ""
           }`}
         />
-        {isTouched.username && invalidUsername && (
+        {isInvalidUsername && (
           <small>You must enter your username</small>
         )}
       </div>
@@ -58,10 +61,10 @@ const Form = (props) => {
           autoComplete="off"
           onBlur={inputBlurHandler}
           className={`${
-            isTouched.email && invalidEmail ? classes["error"] : !invalidEmail ? classes["verified"] : ""
+            isInvalidEmail ? classes["error"] : !invalidEmail ? classes["verified"] : ""
           }`}
         />
-        {isTouched.email && invalidEmail && (
+        {isInvalidEmail && (
           <small>You must enter your email</small>
         )}
       </div>
@@ -77,10 +80,10 @@ const Form = (props) => {
           autoComplete="off"
           onBlur={inputBlurHandler}
           className={`${
-            isTouched.password1 && invalidPassword1 ? classes["error"] : !invalidPassword1 ? classes["verified"] : ""
+            isInvalidPassword1 ? classes["error"] : !invalidPassword1 ? classes["verified"] : ""
           }`}
         />
-        {isTouched.password1 && invalidPassword1 && (
+        {isInvalidPassword1 && (
           <small>You must enter a password</small>
         )}
       </div>
@@ -96,10 +99,10 @@ const Form = (props) => {
           autoComplete="off"
           onBlur={inputBlurHandler}
           className={`${
-            isTouched.password2 && invalidPassword2 ? classes["error"] : !invalidPassword2 ? classes["verified"] : ""
+            isInvalidPassword2 ? classes["error"] : !invalidPassword2 ? classes["verified"] : ""
           }`}
         />
-        {isTouched.password2 && invalidPassword2 && (
+        {isInvalidPassword2 && (
           <small>You must confirm the password</small>
         )}
       </div>
