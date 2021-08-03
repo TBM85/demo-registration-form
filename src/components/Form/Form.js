@@ -39,7 +39,7 @@ const Form = (props) => {
           maxLength={25}
           onBlur={inputBlurHandler}
           className={`${
-            isTouched.username && invalidUsername ? classes["error"] : ""
+            isTouched.username && invalidUsername ? classes["error"] : !invalidUsername ? classes["verified"] : ""
           }`}
         />
         {isTouched.username && invalidUsername && (
@@ -58,7 +58,7 @@ const Form = (props) => {
           autoComplete="off"
           onBlur={inputBlurHandler}
           className={`${
-            isTouched.email && invalidEmail ? classes["error"] : ""
+            isTouched.email && invalidEmail ? classes["error"] : !invalidEmail ? classes["verified"] : ""
           }`}
         />
         {isTouched.email && invalidEmail && (
@@ -77,7 +77,7 @@ const Form = (props) => {
           autoComplete="off"
           onBlur={inputBlurHandler}
           className={`${
-            isTouched.password1 && invalidPassword1 ? classes["error"] : ""
+            isTouched.password1 && invalidPassword1 ? classes["error"] : !invalidPassword1 ? classes["verified"] : ""
           }`}
         />
         {isTouched.password1 && invalidPassword1 && (
@@ -96,7 +96,7 @@ const Form = (props) => {
           autoComplete="off"
           onBlur={inputBlurHandler}
           className={`${
-            isTouched.password2 && invalidPassword2 ? classes["error"] : ""
+            isTouched.password2 && invalidPassword2 ? classes["error"] : !invalidPassword2 ? classes["verified"] : ""
           }`}
         />
         {isTouched.password2 && invalidPassword2 && (

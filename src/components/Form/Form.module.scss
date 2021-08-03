@@ -49,10 +49,19 @@
     width: 100%;
   }
 
-  .error {
-    background-image: url("../../assets/icons/error.svg");
+  @mixin form-icon {
     background-position: right;
     background-repeat: no-repeat;
     background-origin: content-box;
+  }
+
+  .error {
+    background-image: url("../../assets/icons/error.svg");
+    @include form-icon;
+  }
+
+  .verified {
+    background-image: url("../../assets/icons/verified.svg");
+    @include form-icon;
   }
 }
