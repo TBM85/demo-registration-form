@@ -66,7 +66,7 @@ const useForm = () => {
     });
   };
 
-  // Define when the inputs are invalid
+  // Define when inputs are invalid
   const isInvalidUsername =
     (isTouched.username && invalidUsername) ||
     (isTouched.email && invalidUsername) ||
@@ -83,6 +83,12 @@ const useForm = () => {
     (isTouched.password2 && invalidPassword1);
 
   const isInvalidPassword2 = isTouched.password2 && invalidPassword2;
+
+  // Define when inputs are empty
+  const isEmptyUsername = !isTouched.username;
+  const isEmptyEmail = !isTouched.email;
+  const isEmptyPassword1 = !isTouched.password1;
+  const isEmptyPassword2 = !isTouched.password2;
 
   // Submit the values of the form input fields and open the content page
   const submitHandler = (event) => {
@@ -120,6 +126,10 @@ const useForm = () => {
     isInvalidEmail,
     isInvalidPassword1,
     isInvalidPassword2,
+    isEmptyUsername,
+    isEmptyEmail,
+    isEmptyPassword1,
+    isEmptyPassword2,
     changeValueHandler,
     submitHandler,
     inputBlurHandler,

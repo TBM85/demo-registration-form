@@ -17,6 +17,10 @@ const Form = (props) => {
     isInvalidEmail,
     isInvalidPassword1,
     isInvalidPassword2,
+    isEmptyUsername,
+    isEmptyEmail,
+    isEmptyPassword1,
+    isEmptyPassword2,
     changeValueHandler,
     submitHandler,
     inputBlurHandler,
@@ -45,9 +49,11 @@ const Form = (props) => {
             isInvalidUsername ? classes["error"] : !invalidUsername ? classes["verified"] : ""
           }`}
         />
-        {isInvalidUsername && (
+        {isInvalidUsername && !isEmptyUsername ? (
+          <small>Please enter at least 6 digits</small>
+        ) : isInvalidUsername ? (
           <small>You must enter your username</small>
-        )}
+        ) : ""}
       </div>
       <div className={classes.FormControl}>
         <label htmlFor="email">Email</label>
@@ -64,9 +70,11 @@ const Form = (props) => {
             isInvalidEmail ? classes["error"] : !invalidEmail ? classes["verified"] : ""
           }`}
         />
-        {isInvalidEmail && (
+        {isInvalidEmail && !isEmptyEmail ? (
+          <small>Please enter a valid email</small>
+        ) : isInvalidEmail ? (
           <small>You must enter your email</small>
-        )}
+        ) : ""}
       </div>
       <div className={classes.FormControl}>
         <label htmlFor="password1">Password</label>
@@ -83,9 +91,11 @@ const Form = (props) => {
             isInvalidPassword1 ? classes["error"] : !invalidPassword1 ? classes["verified"] : ""
           }`}
         />
-        {isInvalidPassword1 && (
+        {isInvalidPassword1 && !isEmptyPassword1 ? (
+          <small>At least 8 digits, 1 uppercase and 1 number</small>
+        ) : isInvalidPassword1 ? (
           <small>You must enter a password</small>
-        )}
+        ) : ""}
       </div>
       <div className={classes.FormControl}>
         <label htmlFor="password2">Confirm Password</label>
@@ -102,9 +112,11 @@ const Form = (props) => {
             isInvalidPassword2 ? classes["error"] : !invalidPassword2 ? classes["verified"] : ""
           }`}
         />
-        {isInvalidPassword2 && (
+        {isInvalidPassword2 && !isEmptyPassword2 ? (
+          <small>It is not the same password</small>
+        ) : isInvalidPassword2 ? (
           <small>You must confirm the password</small>
-        )}
+        ) : ""}
       </div>
       <Button type="submit" className={!isValid && "invalid"}>
         Sign Up
