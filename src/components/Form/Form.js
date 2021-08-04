@@ -126,6 +126,7 @@ const Form = (props) => {
           onChange={changeValueHandler}
           autoComplete="off"
           onBlur={inputBlurHandler}
+          disabled={isInvalidPassword1 || isEmptyPassword1 ? "disable" : ""}
           className={`${
             isInvalidPassword2
               ? classes["error"]
