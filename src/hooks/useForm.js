@@ -28,7 +28,7 @@ const useForm = () => {
 
   // Username verification
   const usernameIsValid = (username) => {
-    return username.length > 6;
+    return username.length >= 6;
   };
 
   // Email address verification function from Tyler McGinnis
@@ -43,7 +43,7 @@ const useForm = () => {
     return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password);
   };
 
-  const invalidUsername = emptyUsername || !usernameIsValid;
+  const invalidUsername = emptyUsername || !usernameIsValid(values.username);
   const invalidEmail = emptyEmail || !emailIsValid(values.email);
   const invalidPassword1 =
     emptyPassword1 || !password1IsValid(values.password1);
