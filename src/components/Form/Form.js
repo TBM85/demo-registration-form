@@ -46,14 +46,20 @@ const Form = (props) => {
           maxLength={25}
           onBlur={inputBlurHandler}
           className={`${
-            isInvalidUsername ? classes["error"] : !invalidUsername ? classes["verified"] : ""
+            isInvalidUsername
+              ? classes["error"]
+              : !invalidUsername
+              ? classes["verified"]
+              : ""
           }`}
         />
         {isInvalidUsername && !isEmptyUsername ? (
           <small>Please enter at least 6 digits</small>
         ) : isInvalidUsername ? (
           <small>You must enter your username</small>
-        ) : ""}
+        ) : (
+          ""
+        )}
       </div>
       <div className={classes.FormControl}>
         <label htmlFor="email">Email</label>
@@ -67,14 +73,20 @@ const Form = (props) => {
           autoComplete="off"
           onBlur={inputBlurHandler}
           className={`${
-            isInvalidEmail ? classes["error"] : !invalidEmail ? classes["verified"] : ""
+            isInvalidEmail
+              ? classes["error"]
+              : !invalidEmail
+              ? classes["verified"]
+              : ""
           }`}
         />
         {isInvalidEmail && !isEmptyEmail ? (
           <small>Please enter a valid email</small>
         ) : isInvalidEmail ? (
           <small>You must enter your email</small>
-        ) : ""}
+        ) : (
+          ""
+        )}
       </div>
       <div className={classes.FormControl}>
         <label htmlFor="password1">Password</label>
@@ -88,14 +100,20 @@ const Form = (props) => {
           autoComplete="off"
           onBlur={inputBlurHandler}
           className={`${
-            isInvalidPassword1 ? classes["error"] : !invalidPassword1 ? classes["verified"] : ""
+            isInvalidPassword1
+              ? classes["error"]
+              : !invalidPassword1
+              ? classes["verified"]
+              : ""
           }`}
         />
         {isInvalidPassword1 && !isEmptyPassword1 ? (
           <small>At least 8 digits, 1 uppercase and 1 number</small>
         ) : isInvalidPassword1 ? (
           <small>You must enter a password</small>
-        ) : ""}
+        ) : (
+          ""
+        )}
       </div>
       <div className={classes.FormControl}>
         <label htmlFor="password2">Confirm Password</label>
@@ -109,14 +127,20 @@ const Form = (props) => {
           autoComplete="off"
           onBlur={inputBlurHandler}
           className={`${
-            isInvalidPassword2 ? classes["error"] : !invalidPassword2 ? classes["verified"] : ""
+            isInvalidPassword2
+              ? classes["error"]
+              : !invalidPassword2
+              ? classes["verified"]
+              : ""
           }`}
         />
         {isInvalidPassword2 && !isEmptyPassword2 ? (
           <small>It is not the same password</small>
         ) : isInvalidPassword2 ? (
           <small>You must confirm the password</small>
-        ) : ""}
+        ) : (
+          ""
+        )}
       </div>
       <Button type="submit" className={!isValid && "invalid"}>
         Sign Up

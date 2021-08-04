@@ -85,10 +85,10 @@ const useForm = () => {
   const isInvalidPassword2 = isTouched.password2 && invalidPassword2;
 
   // Define when inputs are empty
-  const isEmptyUsername = !isTouched.username;
-  const isEmptyEmail = !isTouched.email;
-  const isEmptyPassword1 = !isTouched.password1;
-  const isEmptyPassword2 = !isTouched.password2;
+  const isEmptyUsername = !isTouched.username || emptyUsername;
+  const isEmptyEmail = !isTouched.email || emptyEmail;
+  const isEmptyPassword1 = !isTouched.password1 || emptyPassword1;
+  const isEmptyPassword2 = !isTouched.password2 || emptyPassword2;
 
   // Submit the values of the form input fields and open the content page
   const submitHandler = (event) => {
