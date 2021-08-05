@@ -1,5 +1,11 @@
 @import "./index";
 
+@mixin position {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
 .App {
   text-align: center;
   display: flex;
@@ -7,12 +13,21 @@
   min-height: 100vh;
   justify-content: center;
   color: $third-color;
-}
 
-footer {
-  font-size: 0.75em;
-}
-
-.invalid {
-  cursor: not-allowed !important;
+  header {
+    @include position;
+    top: 0;
+    margin: 2em auto;
+  }
+  
+  footer {
+    font-size: 0.75em;
+    @include position;
+    bottom: 0;
+    margin: 0.5em auto;
+  }
+  
+  .invalid {
+    cursor: not-allowed !important;
+  }
 }

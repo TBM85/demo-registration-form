@@ -13,6 +13,19 @@
 }
 
 .ContentPage {
-  margin: 1em auto;
+  margin: 1em;
   color: $third-color;
+
+  .like {
+    background-image: url("../../assets/icons/like.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 8em;
+    height: 8em;
+    margin: 2em auto 4em;
+  }
+
+  button {
+    margin: 2em auto;
+  }
 }

@@ -20,6 +20,7 @@ const ContentPage = (props) => {
 
   return (
     <div className={classes.ContentPage}>
+      <div className={classes["like"]}></div>
       <h2>Account created, you are now a registered user</h2>
       <Button
         type="button"
