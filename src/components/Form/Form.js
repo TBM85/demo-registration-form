@@ -76,7 +76,7 @@ const Form = (props) => {
           type="email"
           name="email"
           placeholder="example@gmail.com"
-          value={values.email}
+          value={values.email.toLowerCase()}
           onChange={changeValueHandler}
           autoComplete="off"
           onBlur={inputBlurHandler}
