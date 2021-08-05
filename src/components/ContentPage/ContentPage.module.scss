@@ -23,9 +23,22 @@
     width: 8em;
     height: 8em;
     margin: 2em auto 4em;
+    animation: movement 2.5s linear infinite;
   }
 
   button {
     margin: 2em auto;
+  }
+}
+
+@keyframes movement {
+  0% {
+    transform: translateY(0)
+  }
+  50% {
+    transform: translateY(25px)
+  }
+  100% {
+    transform: translateY(0)
   }
 }
