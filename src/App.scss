@@ -6,10 +6,11 @@
   flex-direction: column;
   min-height: 100vh;
   justify-content: center;
+  color: $third-color;
+}
 
-  h1 {
-    color: $third-color;
-  }
+footer {
+  font-size: 0.75em;
 }
 
 .invalid {

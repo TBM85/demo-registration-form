@@ -23,6 +23,12 @@ function App() {
       ) : (
         <ContentPage submitted={submitted} onPassToApp={submittedHandler} />
       )}
+      <footer className="footer">
+        <span>
+          © Copyright 2021. <strong>"TBM85"</strong>
+        </span>
+        <span> All rights reserved</span>
+      </footer>
     </div>
   );
 }
