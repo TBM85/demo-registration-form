@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import useForm from "hooks/useForm";
+import PropTypes from "prop-types";
 
 import classes from "./Form.module.scss";
 import Button from "components/UI/Button/Button";
@@ -25,6 +26,13 @@ const Form = (props) => {
     submitHandler,
     inputBlurHandler,
   } = useForm();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  // Toggle between showing and not showing password
+  const showPasswordHandler = () => {
+    setShowPassword(!showPassword);
+  };
 
   useEffect(() => {
     // Pass the "isSubmitted" variable to parent component "App"
@@ -89,10 +97,20 @@ const Form = (props) => {
         )}
       </div>
       <div className={classes.FormControl}>
-        <label htmlFor="password1">Password</label>
+        <label htmlFor="password1">
+          Password
+          <div className={classes["checkbox"]} onClick={showPasswordHandler}>
+            <input
+              type="checkbox"
+              checked={showPassword}
+              onChange={showPasswordHandler}
+            />{" "}
+            Show password
+          </div>
+        </label>
         <input
           id="password1"
-          type="password"
+          type={showPassword ? "text" : "password"}
           name="password1"
           placeholder="Create a password"
           value={values.password1}
@@ -119,7 +137,7 @@ const Form = (props) => {
         <label htmlFor="password2">Confirm Password</label>
         <input
           id="password2"
-          type="password"
+          type={showPassword ? "text" : "password"}
           name="password2"
           placeholder="Repeat the password"
           value={values.password2}
@@ -151,3 +169,8 @@ const Form = (props) => {
 };
 
 export default Form;
+
+Form.propTypes = {
+  showPassword: PropTypes.bool,
+  showPasswordHandler: PropTypes.func,
+};
