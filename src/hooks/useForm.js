@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 const useForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -137,3 +138,32 @@ const useForm = () => {
 };
 
 export default useForm;
+
+useForm.propTypes = {
+  isSubmitted: PropTypes.bool,
+  values: PropTypes.object,
+  changeValueHandler: PropTypes.func,
+  isValid: PropTypes.bool,
+  emptyUsername: PropTypes.bool,
+  emptyEmail: PropTypes.bool,
+  emptyPassword1: PropTypes.bool,
+  emptyPassword2: PropTypes.bool,
+  usernameIsValid: PropTypes.func,
+  emailIsValid: PropTypes.func,
+  password1IsValid: PropTypes.func,
+  invalidUsername: PropTypes.bool, 
+  invalidEmail: PropTypes.bool,
+  invalidPassword1: PropTypes.bool,
+  invalidPassword2: PropTypes.bool,
+  isTouched: PropTypes.object,
+  inputBlurHandler: PropTypes.func,
+  isInvalidUsername: PropTypes.bool, 
+  isInvalidEmail: PropTypes.bool,
+  isInvalidPassword1: PropTypes.bool,
+  isInvalidPassword2: PropTypes.bool,
+  isEmptyUsername: PropTypes.bool, 
+  isEmptyEmail: PropTypes.bool,
+  isEmptyPassword1: PropTypes.bool,
+  isEmptyPassword2: PropTypes.bool,
+  submitHandler: PropTypes.func
+}
