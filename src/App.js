@@ -32,9 +32,9 @@ function App() {
           <button onClick={() => i18n.changeLanguage("es")}>ES</button>
         </div>
         <span>
-          © Copyright 2021. <strong>"TBM85"</strong>
+          © {t("app.footer1")} 2021. <strong>"TBM85"</strong>
         </span>
-        <span> All rights reserved</span>
+        <span> {t("app.footer2")}</span>
       </footer>
     </div>
   );

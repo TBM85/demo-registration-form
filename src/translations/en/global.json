@@ -1,6 +1,8 @@
 {
   "app": {
-    "registration-form": "Registration Form"
+    "registration-form": "Registration Form",
+    "footer1": "Copyright",
+    "footer2": "All rights reserved"
   },
   "form": {
     "username": "Username",
