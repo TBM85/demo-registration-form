@@ -1,5 +1,25 @@
 {
   "app": {
     "registration-form": "Formulario de Registro"
+  },
+  "form": {
+    "username": "Nombre de usuario",
+    "username-placeholder": "Elige un nombre de usuario",
+    "username-error-invalid": "Ingrese al menos 6 dígitos",
+    "username-error-empty": "Debes ingresar tu nombre de usuario",
+    "email": "Correo",
+    "email-placeholder": "ejemplo@gmail.com",
+    "email-error-invalid": "Introduzca un correo electrónico válido",
+    "email-error-empty": "Debes ingresar tu correo electrónico",
+    "password1": "Contraseña",
+    "password1-checkbox": "Mostrar contraseña",
+    "password1-placeholder": "Crea una contraseña",
+    "password1-error-invalid": "Al menos 8 dígitos, 1 mayúscula y 1 número",
+    "password1-error-empty": "Debes ingresar una contraseña",
+    "password2": "Confirmar contraseña",
+    "password2-placeholder": "Repetir la contraseña",
+    "password2-error-invalid": "No es la misma contraseña",
+    "password2-error-empty": "Debes confirmar la contraseña",
+    "sign-up-button": "Regístrate"
   }
 }

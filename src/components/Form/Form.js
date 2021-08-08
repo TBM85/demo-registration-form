@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useForm from "hooks/useForm";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 import classes from "./Form.module.scss";
 import Button from "components/UI/Button/Button";
@@ -27,6 +28,8 @@ const Form = (props) => {
     inputBlurHandler,
   } = useForm();
 
+  const [t] = useTranslation("global");
+
   const [showPassword, setShowPassword] = useState(false);
 
   // Toggle between showing and not showing password
@@ -42,12 +45,12 @@ const Form = (props) => {
   return (
     <form onSubmit={submitHandler} className={classes.Form}>
       <div className={classes.FormControl}>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">{t("form.username")}</label>
         <input
           id="username"
           type="text"
           name="username"
-          placeholder="Pick a username"
+          placeholder={t("form.username-placeholder")}
           value={values.username}
           onChange={changeValueHandler}
           autoComplete="off"
@@ -62,20 +65,20 @@ const Form = (props) => {
           }`}
         />
         {isInvalidUsername && !isEmptyUsername ? (
-          <small>Please enter at least 6 digits</small>
+          <small>{t("form.username-error-invalid")}</small>
         ) : isInvalidUsername ? (
-          <small>You must enter your username</small>
+          <small>{t("form.username-error-empty")}</small>
         ) : (
           ""
         )}
       </div>
       <div className={classes.FormControl}>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">{t("form.email")}</label>
         <input
           id="email"
           type="email"
           name="email"
-          placeholder="example@gmail.com"
+          placeholder={t("form.email-placeholder")}
           value={values.email.toLowerCase()}
           onChange={changeValueHandler}
           autoComplete="off"
@@ -89,30 +92,30 @@ const Form = (props) => {
           }`}
         />
         {isInvalidEmail && !isEmptyEmail ? (
-          <small>Please enter a valid email</small>
+          <small>{t("form.email-error-invalid")}</small>
         ) : isInvalidEmail ? (
-          <small>You must enter your email</small>
+          <small>{t("form.email-error-empty")}</small>
         ) : (
           ""
         )}
       </div>
       <div className={classes.FormControl}>
         <label htmlFor="password1">
-          Password
+          {t("form.password1")}
           <div className={classes["checkbox"]} onClick={showPasswordHandler}>
             <input
               type="checkbox"
               checked={showPassword}
               onChange={showPasswordHandler}
             />{" "}
-            Show password
+            {t("form.password1-checkbox")}
           </div>
         </label>
         <input
           id="password1"
           type={showPassword ? "text" : "password"}
           name="password1"
-          placeholder="Create a password"
+          placeholder={t("form.password1-placeholder")}
           value={values.password1}
           onChange={changeValueHandler}
           autoComplete="off"
@@ -126,20 +129,20 @@ const Form = (props) => {
           }`}
         />
         {isInvalidPassword1 && !isEmptyPassword1 ? (
-          <small>At least 8 digits, 1 uppercase and 1 number</small>
+          <small>{t("form.password1-error-invalid")}</small>
         ) : isInvalidPassword1 ? (
-          <small>You must enter a password</small>
+          <small>{t("form.password1-error-empty")}</small>
         ) : (
           ""
         )}
       </div>
       <div className={classes.FormControl}>
-        <label htmlFor="password2">Confirm Password</label>
+        <label htmlFor="password2">{t("form.password2")}</label>
         <input
           id="password2"
           type={showPassword ? "text" : "password"}
           name="password2"
-          placeholder="Repeat the password"
+          placeholder={t("form.password2-placeholder")}
           value={values.password2}
           onChange={changeValueHandler}
           autoComplete="off"
@@ -153,15 +156,15 @@ const Form = (props) => {
           }`}
         />
         {isInvalidPassword2 && !isEmptyPassword2 ? (
-          <small>It is not the same password</small>
+          <small>{t("form.password2-error-invalid")}</small>
         ) : isInvalidPassword2 ? (
-          <small>You must confirm the password</small>
+          <small>{t("form.password2-error-empty")}</small>
         ) : (
           ""
         )}
       </div>
       <Button type="submit" className={!isValid && "invalid"}>
-        Sign Up
+        {t("form.sign-up-button")}
       </Button>
     </form>
   );

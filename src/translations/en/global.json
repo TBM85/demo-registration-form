@@ -1,5 +1,25 @@
 {
   "app": {
     "registration-form": "Registration Form"
+  },
+  "form": {
+    "username": "Username",
+    "username-placeholder": "Pick a username",
+    "username-error-invalid": "Please enter at least 6 digits",
+    "username-error-empty": "You must enter your username",
+    "email": "Email",
+    "email-placeholder": "example@gmail.com",
+    "email-error-invalid": "Please enter a valid email",
+    "email-error-empty": "You must enter your email",
+    "password1": "Password",
+    "password1-checkbox": "Show password",
+    "password1-placeholder": "Create a password",
+    "password1-error-invalid": "At least 8 digits, 1 uppercase and 1 number",
+    "password1-error-empty": "You must enter a password",
+    "password2": "Confirm Password",
+    "password2-placeholder": "Repeat the password",
+    "password2-error-invalid": "It is not the same password",
+    "password2-error-empty": "You must confirm the password",
+    "sign-up-button": "Sign Up"
   }
 }
