@@ -24,5 +24,9 @@
     "password2-error-invalid": "No es la misma contraseña",
     "password2-error-empty": "Debes confirmar la contraseña",
     "sign-up-button": "Regístrate"
+  },
+  "content-page": {
+    "text": "Cuenta creada, ahora eres un usuario registrado",
+    "logout-button": "Cerrar sesión"
   }
 }
