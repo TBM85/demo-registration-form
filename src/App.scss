@@ -25,6 +25,31 @@
     @include position;
     bottom: 0;
     margin: 0.5em auto;
+
+    .btn-group {
+      border: 1px solid #2f4858;
+      border-radius: 0.5em;
+      width: fit-content;
+      margin: 1em auto;
+
+      button {
+        padding: 0.35em 1em;
+        border: 1px solid #2f4858;
+        background: #2f4858;
+        color: #fff;
+        font-size: 1.35em;
+        font-weight: bold;
+        width: 3.5em;
+        cursor: pointer;
+
+        &.active {
+          background: transparent !important;
+          color: #2f4858 !important;
+          border: transparent !important;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+      }
+    }
   }
   
   .invalid {

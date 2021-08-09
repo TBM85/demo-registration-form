@@ -28,7 +28,7 @@ function App() {
       )}
       <footer className="footer">
         <div className="btn-group">
-          <button onClick={() => i18n.changeLanguage("en")}>EN</button>
+          <button className="active" onClick={() => i18n.changeLanguage("en")}>EN</button>
           <button onClick={() => i18n.changeLanguage("es")}>ES</button>
         </div>
         <span>
