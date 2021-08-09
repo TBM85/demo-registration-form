@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 
@@ -16,6 +16,20 @@ function App() {
     setSubmitted(isSubmitted);
   };
 
+  const [lang, setLang] = useState("en");
+
+  const changeLangHandler = () => {
+    if (lang === "en") {
+      setLang("es");
+    } else {
+      setLang("en");
+    }
+  };
+
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [i18n, lang]);
+
   return (
     <div className="App">
       <header className="header">
@@ -28,8 +42,18 @@ function App() {
       )}
       <footer className="footer">
         <div className="btn-group">
-          <button className="active" onClick={() => i18n.changeLanguage("en")}>EN</button>
-          <button onClick={() => i18n.changeLanguage("es")}>ES</button>
+          <button
+            className={lang === "en" ? "active" : ""}
+            onClick={lang === "en" ? null : changeLangHandler}
+          >
+            EN
+          </button>
+          <button
+            className={lang === "es" ? "active" : ""}
+            onClick={lang === "es" ? null : changeLangHandler}
+          >
+            ES
+          </button>
         </div>
         <span>
           © {t("app.footer1")} 2021. <strong>"TBM85"</strong>
