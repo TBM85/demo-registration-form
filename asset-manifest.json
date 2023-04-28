@@ -1,24 +1,18 @@
 {
   "files": {
-    "main.css": "/demo-registration-form/static/css/main.770ff220.chunk.css",
-    "main.js": "/demo-registration-form/static/js/main.9fdec237.chunk.js",
-    "main.js.map": "/demo-registration-form/static/js/main.9fdec237.chunk.js.map",
-    "runtime-main.js": "/demo-registration-form/static/js/runtime-main.b19cbf37.js",
-    "runtime-main.js.map": "/demo-registration-form/static/js/runtime-main.b19cbf37.js.map",
-    "static/js/2.b82974fa.chunk.js": "/demo-registration-form/static/js/2.b82974fa.chunk.js",
-    "static/js/2.b82974fa.chunk.js.map": "/demo-registration-form/static/js/2.b82974fa.chunk.js.map",
-    "static/js/3.98e19b53.chunk.js": "/demo-registration-form/static/js/3.98e19b53.chunk.js",
-    "static/js/3.98e19b53.chunk.js.map": "/demo-registration-form/static/js/3.98e19b53.chunk.js.map",
+    "main.css": "/demo-registration-form/static/css/main.b8bc09e9.css",
+    "main.js": "/demo-registration-form/static/js/main.4f988b4b.js",
+    "static/js/787.34bd2ba9.chunk.js": "/demo-registration-form/static/js/787.34bd2ba9.chunk.js",
+    "static/media/like.svg": "/demo-registration-form/static/media/like.d5dfc92cbd27b0a58eb4.svg",
     "index.html": "/demo-registration-form/index.html",
-    "static/css/main.770ff220.chunk.css.map": "/demo-registration-form/static/css/main.770ff220.chunk.css.map",
-    "static/js/2.b82974fa.chunk.js.LICENSE.txt": "/demo-registration-form/static/js/2.b82974fa.chunk.js.LICENSE.txt",
-    "static/media/Form.module.scss": "/demo-registration-form/static/media/verified.a0c48c91.svg",
-    "static/media/ContentPage.module.scss": "/demo-registration-form/static/media/like.d5dfc92c.svg"
+    "static/media/error.svg": "/demo-registration-form/static/media/error.aad02d663b26107a5627.svg",
+    "static/media/verified.svg": "/demo-registration-form/static/media/verified.a0c48c91d20c6816423c.svg",
+    "main.b8bc09e9.css.map": "/demo-registration-form/static/css/main.b8bc09e9.css.map",
+    "main.4f988b4b.js.map": "/demo-registration-form/static/js/main.4f988b4b.js.map",
+    "787.34bd2ba9.chunk.js.map": "/demo-registration-form/static/js/787.34bd2ba9.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.b19cbf37.js",
-    "static/js/2.b82974fa.chunk.js",
-    "static/css/main.770ff220.chunk.css",
-    "static/js/main.9fdec237.chunk.js"
+    "static/css/main.b8bc09e9.css",
+    "static/js/main.4f988b4b.js"
   ]
 }
